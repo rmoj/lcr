@@ -14,7 +14,7 @@ Function GetLastOfMonth(ByVal dteDate As Date) As Date
     ' Find the first day of the next month, then subtract one day.
     GetLastOfMonth = DateSerial(Year(dteDate), month(dteDate) + 1, 1) - 1
 End Function
-  
+
 Public Function IsWorkday(ByVal dat As Date) As Boolean
     'Based on six-workday week, Sunday is not a workday
     If Weekday(dat) = vbSunday Then
@@ -48,14 +48,14 @@ End Function
 
 Public Function GetHourlyRate(ByVal IsMonthly As Boolean, ByVal Salary As Currency) As Currency
     Dim hr As Currency  'currency type substitutes for decimal type
-        
+
     Select Case IsMonthly
         Case True
             hr = Salary * 12 / 313 / 8 'hr = basic*12/313/8
         Case False
             hr = Salary / 8
     End Select
-        
+
     GetHourlyRate = hr
 
 End Function
@@ -96,12 +96,12 @@ Else
     GetDeductions = SSSCont + Wtax + PagibigLoan + deduction1 + deduction2 + deduction3 + deduction4 + deduction5
 End If
 End Function
-       
+
 Public Function GetWTax(ByVal grossformonth As Currency, ByVal ExemptionStatus As String) As Currency
         'tax table 2009
         Dim g As Currency
         Dim w As Currency
-        
+
         g = grossformonth
 
         Select Case ExemptionStatus
@@ -116,13 +116,13 @@ Public Function GetWTax(ByVal grossformonth As Currency, ByVal ExemptionStatus A
                     w = (g - 66667) * 0.25 + 8541.8
                 ElseIf g < 666666 Then
                     w = (g - 166667) * 0.3 + 33541.8
-                
+
                 Else
                     w = (g - 666667) * 0.35 + 200833.33
                 End If
-                
 
-           
+
+
             Case "ME"
                 If g < 20833 Then
                     w = 0
@@ -134,11 +134,11 @@ Public Function GetWTax(ByVal grossformonth As Currency, ByVal ExemptionStatus A
                     w = (g - 66667) * 0.25 + 8541.8
                 ElseIf g < 666666 Then
                     w = (g - 166667) * 0.3 + 33541.8
-                
+
                 Else
                     w = (g - 666667) * 0.35 + 200833.33
                 End If
-                
+
 
             Case "S1"
                 If g < 20833 Then
@@ -151,11 +151,11 @@ Public Function GetWTax(ByVal grossformonth As Currency, ByVal ExemptionStatus A
                     w = (g - 66667) * 0.25 + 8541.8
                 ElseIf g < 666666 Then
                     w = (g - 166667) * 0.3 + 33541.8
-                
+
                 Else
                     w = (g - 666667) * 0.35 + 200833.33
                 End If
-           
+
 
             Case "S2"
                 If g < 20833 Then
@@ -168,11 +168,11 @@ Public Function GetWTax(ByVal grossformonth As Currency, ByVal ExemptionStatus A
                     w = (g - 66667) * 0.25 + 8541.8
                 ElseIf g < 666666 Then
                     w = (g - 166667) * 0.3 + 33541.8
-                
+
                 Else
                     w = (g - 666667) * 0.35 + 200833.33
                 End If
-        
+
 
             Case "S3"
                 If g < 20833 Then
@@ -185,7 +185,7 @@ Public Function GetWTax(ByVal grossformonth As Currency, ByVal ExemptionStatus A
                     w = (g - 66667) * 0.25 + 8541.8
                 ElseIf g < 666666 Then
                     w = (g - 166667) * 0.3 + 33541.8
-                
+
                 Else
                     w = (g - 666667) * 0.35 + 200833.33
                 End If
@@ -201,7 +201,7 @@ Public Function GetWTax(ByVal grossformonth As Currency, ByVal ExemptionStatus A
                     w = (g - 66667) * 0.25 + 8541.8
                 ElseIf g < 666666 Then
                     w = (g - 166667) * 0.3 + 33541.8
-                
+
                 Else
                     w = (g - 666667) * 0.35 + 200833.33
                 End If
@@ -218,7 +218,7 @@ Public Function GetWTax(ByVal grossformonth As Currency, ByVal ExemptionStatus A
                     w = (g - 66667) * 0.25 + 8541.8
                 ElseIf g < 666666 Then
                     w = (g - 166667) * 0.3 + 33541.8
-                
+
                 Else
                     w = (g - 666667) * 0.35 + 200833.33
                 End If
@@ -234,7 +234,7 @@ Public Function GetWTax(ByVal grossformonth As Currency, ByVal ExemptionStatus A
                     w = (g - 66667) * 0.25 + 8541.8
                 ElseIf g < 666666 Then
                     w = (g - 166667) * 0.3 + 33541.8
-                
+
                 Else
                     w = (g - 666667) * 0.35 + 200833.33
                 End If
@@ -251,7 +251,7 @@ Public Function GetWTax(ByVal grossformonth As Currency, ByVal ExemptionStatus A
                     w = (g - 66667) * 0.25 + 8541.8
                 ElseIf g < 666666 Then
                     w = (g - 166667) * 0.3 + 33541.8
-                
+
                 Else
                     w = (g - 666667) * 0.35 + 200833.33
                 End If
@@ -268,68 +268,68 @@ Public Function GetWTax(ByVal grossformonth As Currency, ByVal ExemptionStatus A
                     w = (g - 66667) * 0.25 + 8541.8
                 ElseIf g < 666666 Then
                     w = (g - 166667) * 0.3 + 33541.8
-                
+
                 Else
                     w = (g - 666667) * 0.35 + 200833.33
                 End If
-                
-                
+
+
                 Case "MWE"
-                
+
                     w = 0
-                               
+
 
         End Select
 
         GetWTax = w
 
 End Function
-    
+
 Public Function GetExemptions(ByVal exemptionstat As String) As Currency
         Dim exemptions As Currency
-        
+
 
         Select Case exemptionstat
             Case "MWE"
                 exemptions = 200000
-                
+
             Case "S"
                exemptions = 50000
-        
-                      
+
+
             Case "S1"
                 exemptions = 75000
-        
+
             Case "S2"
                 exemptions = 100000
-        
+
             Case "S3"
                 exemptions = 125000
-            
+
             Case "S4"
                 exemptions = 150000
-                        
+
             Case "ME"
                 exemptions = 50000
-                
+
             Case "ME1"
                 exemptions = 75000
-                                
+
             Case "ME2"
                 exemptions = 100000
-                                
+
             Case "ME3"
                 exemptions = 125000
-                                
+
             Case "ME4"
                 exemptions = 150000
-                                
+
         End Select
-        
+
         GetExemptions = exemptions
 
 End Function
-    
+
 Public Function GetSSSCont(ByVal gross As Currency) As Currency
        'Computes SSS Employee Contributions
         'gross = monthly gross + nontaxable
@@ -456,7 +456,7 @@ End Function
 Public Function GetER(ByVal ee As Currency) As Currency
         'Computes SSS Employer Contributions
         'from SSS Schedule 2007
-        
+
         Dim er As Currency
 
            Select Case ee
@@ -568,20 +568,18 @@ Public Function GetER(ByVal ee As Currency) As Currency
                er = 2802.5
             Case 1350
                er = 2850
-               
+
         End Select
-        
+
         GetER = er
 
 End Function
 
 Public Function GetEC(ByVal ee As Currency) As Currency
-'from SSS Schedule 2007
+'from SSS Contributions Table 2025
 
 Dim ec As Currency
-If ee < 180 Then
-    ec = 0
-ElseIf ee < 652.51 Then
+If ee < 750 Then
     ec = 10
 Else
     ec = 30
@@ -592,7 +590,7 @@ End Function
 Public Function GetAnnualWTax(ByVal Taxable As Currency) As Currency
         'from tax table 2003
         Dim taxdue As Currency
-        
+
         If Taxable < 10000 Then
             taxdue = Taxable * 0.05
         ElseIf Taxable < 30000 Then
@@ -610,5 +608,3 @@ Public Function GetAnnualWTax(ByVal Taxable As Currency) As Currency
         End If
         GetAnnualWTax = taxdue
 End Function
-
-
