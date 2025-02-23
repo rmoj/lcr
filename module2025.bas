@@ -331,122 +331,132 @@ Public Function GetExemptions(ByVal exemptionstat As String) As Currency
 End Function
 
 Public Function GetSSSCont(ByVal gross As Currency) As Currency
-       'Computes SSS Employee Contributions
+       'Computes SSS Employee Contributions (ee)
         'gross = monthly gross + nontaxable
         Dim sss As Currency
 
-        If gross < 4250 Then
-            sss = 180
-        ElseIf gross < 4750 Then
-            sss = 202.5
-        ElseIf gross < 5250 Then
-            sss = 180
-        ElseIf gross < 4750 Then
-            sss = 225
+        If gross < 5250 Then
+            sss = 250
         ElseIf gross < 5750 Then
-            sss = 247.5
+            sss = 275
         ElseIf gross < 6250 Then
-            sss = 270
-
+            sss = 300
         ElseIf gross < 6750 Then
-            sss = 292.5
+            sss = 325
         ElseIf gross < 7250 Then
-            sss = 315
+            sss = 350
         ElseIf gross < 7750 Then
-            sss = 337.5
+            sss = 375
         ElseIf gross < 8250 Then
-            sss = 360
+            sss = 400
         ElseIf gross < 8750 Then
-            sss = 382.5
+            sss = 425
         ElseIf gross < 9250 Then
-            sss = 405
-
-        ElseIf gross < 9750 Then
-            sss = 427.5
-        ElseIf gross < 10250 Then
             sss = 450
+        ElseIf gross < 9750 Then
+            sss = 475
+        ElseIf gross < 10250 Then
+            sss = 500
         ElseIf gross < 10750 Then
-            sss = 472.5
+            sss = 525
         ElseIf gross < 11250 Then
-            sss = 495
+            sss = 550
         ElseIf gross < 11750 Then
-            sss = 517.5
+            sss = 575
         ElseIf gross < 12250 Then
-            sss = 540
-
+            sss = 600
         ElseIf gross < 12750 Then
-            sss = 562.5
+            sss = 625
         ElseIf gross < 13250 Then
-            sss = 585
+            sss = 650
         ElseIf gross < 13750 Then
-            sss = 607.5
-        ElseIf gross < 14250 Then
-            sss = 630
-        ElseIf gross < 14750 Then
-            sss = 652.5
-        ElseIf gross < 15250 Then
             sss = 675
-
+        ElseIf gross < 14250 Then
+            sss = 700
+        ElseIf gross < 14750 Then
+            sss = 725
+        ElseIf gross < 15250 Then
+            sss = 750
         ElseIf gross < 15750 Then
-            sss = 697.5
+            sss = 775
         ElseIf gross < 16250 Then
-            sss = 720
+            sss = 800
         ElseIf gross < 16750 Then
-            sss = 742.5
+            sss = 825
         ElseIf gross < 17250 Then
-            sss = 765
+            sss = 850
         ElseIf gross < 17750 Then
-            sss = 787.5
+            sss = 875
         ElseIf gross < 18250 Then
-            sss = 810
-        ElseIf gross < 18750 Then
-            sss = 832.5
-        ElseIf gross < 19250 Then
-            sss = 855
-        ElseIf gross < 19750 Then
-            sss = 877.5
-        ElseIf gross < 20250 Then
             sss = 900
+        ElseIf gross < 18750 Then
+            sss = 925
+        ElseIf gross < 19250 Then
+            sss = 950
+        ElseIf gross < 19750 Then
+            sss = 975
+        ElseIf gross < 20250 Then
+            sss = 1000
         ElseIf gross < 20750 Then
-            sss = 922.5
+            sss = 1025
         ElseIf gross < 21250 Then
-            sss = 945
+            sss = 1050
         ElseIf gross < 21750 Then
-            sss = 967.5
+            sss = 1075
         ElseIf gross < 22250 Then
-            sss = 990
+            sss = 1100
         ElseIf gross < 22750 Then
-            sss = 1012.5
-        ElseIf gross < 23250 Then
-            sss = 1035
-        ElseIf gross < 23750 Then
-            sss = 1057.5
-        ElseIf gross < 24250 Then
-            sss = 1080
-        ElseIf gross < 24750 Then
-            sss = 1102.5
-        ElseIf gross < 25250 Then
             sss = 1125
+        ElseIf gross < 23250 Then
+            sss = 1150
+        ElseIf gross < 23750 Then
+            sss = 1175
+        ElseIf gross < 24250 Then
+            sss = 1200
+        ElseIf gross < 24750 Then
+            sss = 1225
+        ElseIf gross < 25250 Then
+            sss = 1250
          ElseIf gross < 25750 Then
-            sss = 1147.5
+            sss = 1275
         ElseIf gross < 26250 Then
-            sss = 1170
+            sss = 1300
         ElseIf gross < 26750 Then
-            sss = 1192.5
+            sss = 1325
         ElseIf gross < 27250 Then
-            sss = 1215
-        ElseIf gross < 27750 Then
-            sss = 1237.5
-        ElseIf gross < 28250 Then
-            sss = 1260
-        ElseIf gross < 28750 Then
-            sss = 1282.5
-        ElseIf gross < 29250 Then
-            sss = 1305
-        ElseIf gross < 29750 Then
-            sss = 1327.5
-        Else
             sss = 1350
+        ElseIf gross < 27750 Then
+            sss = 1375
+        ElseIf gross < 28250 Then
+            sss = 1400
+        ElseIf gross < 28750 Then
+            sss = 1425
+        ElseIf gross < 29250 Then
+            sss = 1450
+        ElseIf gross < 29750 Then
+            sss = 1475
+        ElseIf gross < 30250 Then
+            sss = 1500
+        ElseIf gross < 30750 Then
+            sss = 1525
+        ElseIf gross < 31250 Then
+            sss = 1550
+        ElseIf gross < 31750 Then
+            sss = 1575
+        ElseIf gross < 32250 Then
+            sss = 1600
+        ElseIf gross < 32750 Then
+            sss = 1625
+        ElseIf gross < 33250 Then
+            sss = 1650
+        ElseIf gross < 33750 Then
+            sss = 1675
+        ElseIf gross < 34250 Then
+            sss = 1700
+        ElseIf gross < 34750 Then
+            sss = 1725
+        Else
+            sss = 1750
         End If
 
         GetSSSCont = sss
