@@ -332,6 +332,7 @@ End Function
 
 Public Function GetSSSCont(ByVal gross As Currency) As Currency
        'Computes SSS Employee Contributions (ee)
+       'from SSS Contributions Table 2025
         'gross = monthly gross + nontaxable
         Dim sss As Currency
 
@@ -464,124 +465,13 @@ Public Function GetSSSCont(ByVal gross As Currency) As Currency
 End Function
 
 Public Function GetER(ByVal ee As Currency) As Currency
-        'Computes SSS Employer Contributions
-        'from SSS Schedule 2007
+'Computes SSS Employer Contributions
+'from SSS Contributions TAble 2025
 
-        Dim er As Currency
+  Dim er As Currency
+  er = ee * 2
 
-           Select Case ee
-            Case 0
-               er = 0
-            Case 180
-               er = 380
-            Case 202.5
-               er = 427.5
-            Case 225
-               er = 475
-            Case 247.5
-               er = 522.5
-            Case 270
-               er = 570
-            Case 292.5
-               er = 617.5
-            Case 315
-               er = 665
-            Case 337.5
-               er = 712.5
-            Case 360
-               er = 760
-            Case 382.5
-               er = 807.5
-            Case 405
-               er = 855
-            Case 427.5
-               er = 902.5
-            Case 450
-               er = 950
-            Case 472.5
-               er = 997.5
-            Case 495
-               er = 1045
-            Case 517.5
-               er = 1092.5
-            Case 540
-               er = 1140
-            Case 562.5
-               er = 1187.5
-            Case 585
-               er = 1235
-            Case 607.5
-               er = 1282.5
-            Case 630
-               er = 1330
-            Case 652.5
-               er = 1377.5
-            Case 675
-               er = 1425
-            Case 697.5
-               er = 1472.5
-            Case 720
-               er = 1520
-            Case 742.5
-               er = 1567.5
-            Case 765
-               er = 1615
-            Case 787.5
-               er = 1662.5
-            Case 810
-               er = 1710
-            Case 832.5
-               er = 1757.5
-            Case 855
-               er = 1805
-            Case 877.5
-               er = 1852.5
-            Case 900
-               er = 1900
-            Case 922.5
-               er = 1947.5
-            Case 945
-               er = 1995
-            Case 967.5
-               er = 2042.5
-            Case 990
-               er = 2090
-            Case 1012.5
-               er = 2137.5
-            Case 1035
-               er = 2185
-            Case 1057.5
-               er = 2232.5
-            Case 1080
-               er = 2280
-            Case 1102.5
-               er = 2327.5
-            Case 1125
-               er = 2375
-            Case 1147.5
-               er = 2422.5
-            Case 1170
-               er = 2470
-            Case 1192.5
-               er = 2517.5
-            Case 1215
-               er = 2565
-            Case 1237.5
-               er = 2612.5
-            Case 1260
-               er = 2660
-            Case 1282.5
-               er = 2707.5
-            Case 1305
-               er = 2755
-            Case 1327.5
-               er = 2802.5
-            Case 1350
-               er = 2850
-
-        End Select
-
-        GetER = er
+  GetER = er
 
 End Function
 
